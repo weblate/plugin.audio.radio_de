@@ -17,12 +17,12 @@ cat_types = ra.get_category_types()
 assert cat_types
 
 for cat_type in cat_types:
-    print 'Checking get_categories by category_type=%s' % repr(cat_type)
+    print('Checking get_categories by category_type=%s' % repr(cat_type))
     categories = ra.get_categories(cat_type)
     assert categories
     for category in categories[0:DEPTH]:
-        print ('Checking get_stations_by_category category_type=%s category=%s'
-               % (repr(cat_type), repr(category)))
+        print(('Checking get_stations_by_category category_type=%s category=%s'
+               % (repr(cat_type), repr(category))))
         stations = ra.get_stations_by_category(cat_type, category)
         assert stations
 
