@@ -8,9 +8,9 @@
     </extension>
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
-        <website>http://www.radio.de</website>
+        <website>https://www.radio.de</website>
         <source>https://github.com/XBMC-Addons/plugin.audio.radio_de</source>
-        <forum>http://forum.xbmc.org/showthread.php?tid=119362</forum>
+        <forum>https://forum.xbmc.org/showthread.php?tid=119362</forum>
         <license>GPL-2.0-only</license>
         <news>v2.3.4 (4/12/2019)
             [new] Update to support python 3
