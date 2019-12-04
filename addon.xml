@@ -8,12 +8,11 @@
         <provides>audio</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <language></language>
         <platform>all</platform>
         <website>http://www.radio.de</website>
-        <source>https://github.com/dersphere/plugin.audio.radio_de</source>
+        <source>https://github.com/XBMC-Addons/plugin.audio.radio_de</source>
         <forum>http://forum.xbmc.org/showthread.php?tid=119362</forum>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <license>GPL-2.0-only</license>
         <summary lang="be">Access &gt;7000 radio broadcasts</summary>
         <summary lang="ca">accedeix a mes de 7000 emissores de radio</summary>
         <summary lang="da">Få adgang til &gt;7000 radioudsendelser</summary>
