@@ -207,13 +207,13 @@ def show_genres():
     items = []
     for genre in genres:
         items.append({
-            'label': genre["systemEnglish"],
+            'label': __encode(genre["systemEnglish"]),
             'icon': plugin.icon,
             'fanart': __get_plugin_fanart(),
             'path': plugin.url_for(
                 'show_popular_and_az',
                 category='genres',
-                value=genre["systemEnglish"]
+                value=__encode(genre["systemEnglish"])
             ),
         })
     return plugin.finish(items)
@@ -224,13 +224,13 @@ def show_topics():
     items = []
     for topic in topics:
         items.append({
-            'label': topic["systemEnglish"],
+            'label': __encode(topic["systemEnglish"]),
             'icon': plugin.icon,
             'fanart': __get_plugin_fanart(),
             'path': plugin.url_for(
                 'show_popular_and_az',
                 category='topics',
-                value=topic["systemEnglish"]
+                value=__encode(topic["systemEnglish"])
             ),
         })
     return plugin.finish(items)
@@ -241,13 +241,13 @@ def show_countries():
     items = []
     for country in countries:
         items.append({
-            'label': country["systemEnglish"],
+            'label': __encode(country["systemEnglish"]),
             'icon': plugin.icon,
             'fanart': __get_plugin_fanart(),
             'path': plugin.url_for(
                 'show_popular_and_az',
                 category='countries',
-                value=country["systemEnglish"]
+                value=__encode(country["systemEnglish"])
             ),
         })
     return plugin.finish(items)
@@ -258,13 +258,13 @@ def show_languages():
     items = []
     for lang in languages:
         items.append({
-            'label': lang["systemEnglish"],
+            'label': __encode(lang["systemEnglish"]),
             'icon': plugin.icon,
             'fanart': __get_plugin_fanart(),
             'path': plugin.url_for(
                 'show_popular_and_az',
                 category='languages',
-                value=lang["systemEnglish"]
+                value=__encode(lang["systemEnglish"])
             ),
         })
     return plugin.finish(items)
@@ -292,25 +292,25 @@ def show_cities_list(option):
         countries = radio_api.get_countries()
         for country in countries:
             items.append({
-                'label': country["systemEnglish"],
+                'label': __encode(country["systemEnglish"]),
                 'icon': plugin.icon,
                 'fanart': __get_plugin_fanart(),
                 'path': plugin.url_for(
                     'show_cities_by_country',
-                    country = country["systemEnglish"],
+                    country = __encode(country["systemEnglish"]),
                 ),
             })
     else:
         cities = radio_api.get_cities()
         for city in cities:
             items.append({
-                'label': city["systemEnglish"],
+                'label': __encode(city["systemEnglish"]),
                 'icon': plugin.icon,
                 'fanart': __get_plugin_fanart(),
                 'path': plugin.url_for(
                     'show_popular_and_az',
                     category = 'cities',
-                    value = city["systemEnglish"],
+                    value = __encode(city["systemEnglish"]),
                 ),
             })
     return plugin.finish(items)
@@ -321,13 +321,13 @@ def show_cities_by_country(country):
     cities = radio_api.get_cities(country=country)
     for city in cities:
         items.append({
-            'label': city["systemEnglish"],
+            'label': __encode(city["systemEnglish"]),
             'icon': plugin.icon,
             'fanart': __get_plugin_fanart(),
             'path': plugin.url_for(
                 'show_popular_and_az',
                 category = 'cities',
-                value = city["systemEnglish"],
+                value = __encode(city["systemEnglish"]),
             )
         })
     return plugin.finish(items)
@@ -546,6 +546,10 @@ def __log(text):
 def __get_plugin_fanart():
     return plugin.fanart if not plugin.get_setting('hide-fanart', bool) else ''
 
+def __encode(string):
+    if PY3:
+        return string
+    return string.encode('utf-8')
 
 def _(string_id):
     if string_id in STRINGS:
