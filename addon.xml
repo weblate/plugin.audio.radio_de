@@ -10,7 +10,7 @@
         <platform>all</platform>
         <website>https://www.radio.de</website>
         <source>https://github.com/XBMC-Addons/plugin.audio.radio_de</source>
-        <forum>https://forum.xbmc.org/showthread.php?tid=119362</forum>
+        <forum>https://forum.kodi.tv/showthread.php?tid=119362</forum>
         <license>GPL-2.0-only</license>
         <news>v2.4.0 (29/12/2019)
             [new] Use radio API v2
