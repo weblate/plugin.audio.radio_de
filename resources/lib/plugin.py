@@ -50,30 +50,40 @@ my_stations = plugin.get_storage('my_stations.json', file_format='json')
 @plugin.route('/')
 def show_root_menu():
     items = (
-        {'label': _('local_stations'), 'icon': plugin.icon, 'fanart': plugin.fanart,
+        {'label': _('local_stations'), 'icon': plugin.icon,
+         'fanart': __get_plugin_fanart(),
          'path': plugin.url_for('show_local_stations')},
-        {'label': _('editorials_recommendations'),  'icon': plugin.icon, 'fanart': plugin.fanart,
+        {'label': _('editorials_recommendations'),  'icon': plugin.icon,
+         'fanart': __get_plugin_fanart(),
          'path': plugin.url_for('show_recommendation_stations')},
-        {'label': _('top_100_stations'), 'icon': plugin.icon, 'fanart': plugin.fanart,
+        {'label': _('top_100_stations'), 'icon': plugin.icon,
+         'fanart': __get_plugin_fanart(),
          'path': plugin.url_for('show_top_stations')},
-        {'label': _('browse_by_genre'), 'icon': plugin.icon, 'fanart': plugin.fanart,
+        {'label': _('browse_by_genre'), 'icon': plugin.icon,
+         'fanart': __get_plugin_fanart(),
          'path': plugin.url_for('show_station_categories',
                                 category_type='genre')},
-        {'label': _('browse_by_topic'), 'icon': plugin.icon, 'fanart': plugin.fanart,
+        {'label': _('browse_by_topic'), 'icon': plugin.icon,
+         'fanart': __get_plugin_fanart(),
          'path': plugin.url_for('show_station_categories',
                                 category_type='topic')},
-        {'label': _('browse_by_country'), 'icon': plugin.icon, 'fanart': plugin.fanart,
+        {'label': _('browse_by_country'), 'icon': plugin.icon,
+         'fanart': __get_plugin_fanart(),
          'path': plugin.url_for('show_station_categories',
                                 category_type='country')},
-        {'label': _('browse_by_city'), 'icon': plugin.icon, 'fanart': plugin.fanart,
+        {'label': _('browse_by_city'), 'icon': plugin.icon,
+         'fanart': __get_plugin_fanart(),
          'path': plugin.url_for('show_station_categories',
                                 category_type='city')},
-        {'label': _('browse_by_language'), 'icon': plugin.icon, 'fanart': plugin.fanart,
+        {'label': _('browse_by_language'), 'icon': plugin.icon,
+         'fanart': __get_plugin_fanart(),
          'path': plugin.url_for('show_station_categories',
                                 category_type='language')},
-        {'label': _('search_for_station'), 'icon': plugin.icon, 'fanart': plugin.fanart,
+        {'label': _('search_for_station'), 'icon': plugin.icon,
+         'fanart': __get_plugin_fanart(),
          'path': plugin.url_for('search')},
-        {'label': _('my_stations'), 'icon': plugin.icon, 'fanart': plugin.fanart,
+        {'label': _('my_stations'), 'icon': plugin.icon,
+         'fanart': __get_plugin_fanart(),
          'path': plugin.url_for('show_my_stations')},
     )
     return plugin.finish(items)
@@ -191,7 +201,7 @@ def get_stream_url(station_id):
             path=stream_url,
             icon=station['thumbnail'],
             thumbnail=station['thumbnail'],
-            fanart=plugin.fanart
+            fanart=__get_plugin_fanart(),
         )
     )
 
@@ -222,7 +232,7 @@ def __add_stations(stations, add_custom=False):
         items.append({
             'label': station.get('name', ''),
             'thumbnail': station['thumbnail'],
-            'fanart': plugin.fanart,
+            'fanart': __get_plugin_fanart(),
             'info': {
                 'title': station.get('name', ''),
                 'rating': str(station.get('rating', '0.0')),
@@ -271,6 +281,10 @@ def __get_language():
 
 def __log(text):
     plugin.log.info(text)
+
+
+def __get_plugin_fanart():
+    return plugin.fanart if not plugin.get_setting('hide-fanart', bool) else ''
 
 
 def _(string_id):

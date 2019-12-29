@@ -116,3 +116,10 @@ msgctxt "#30600"
 msgid "Network Error"
 msgstr ""
 
+msgctxt "#30601"
+msgid "General"
+msgstr ""
+
+msgctxt "#30602"
+msgid "Hide fanart"
+msgstr ""
