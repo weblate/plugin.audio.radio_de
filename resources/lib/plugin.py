@@ -265,7 +265,7 @@ def __add_stations(stations, add_custom=False):
 
 
 def __get_language():
-    languages = ('english', 'german', 'french')
+    languages = ('english', 'german', 'french', 'portuguese')
     if not plugin.get_setting('not_first_run', str):
         xbmc_language = xbmc.getLanguage().lower()
         __log('__get_language has first run with xbmc_language=%s'

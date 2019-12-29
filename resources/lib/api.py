@@ -41,6 +41,7 @@ class RadioApi():
         'english': 'http://rad.io/info',
         'german': 'http://radio.de/info',
         'french': 'http://radio.fr/info',
+        'portuguese': 'http://radio.pt/info',
     }
 
     CATEGORY_TYPES = (
