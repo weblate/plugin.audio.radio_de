@@ -439,20 +439,25 @@ def get_stream_url(station_id):
         stream_url = station['stream_url']
         current_track = ''
     else:
-        station = radio_api.get_station_by_station_id(station_id)
-        stream_url = station['stream_url']
-        current_track = station['current_track']
-    __log('get_stream_url result: %s' % stream_url)
-    return plugin.set_resolved_url(
-        listitem.ListItem(
-            label=station['name'],
-            label2=current_track,
-            path=stream_url,
-            icon=station['thumbnail'],
-            thumbnail=station['thumbnail'],
-            fanart=__get_plugin_fanart(),
+        station = radio_api.get_station_by_station_id(
+            station_id,
+            force_http=plugin.get_setting('prefer-http', bool)
         )
-    )
+        if station:
+            stream_url = station['stream_url']
+            current_track = station['current_track']
+    if station:
+        __log('get_stream_url result: %s' % stream_url)
+        return plugin.set_resolved_url(
+            listitem.ListItem(
+                label=station['name'],
+                label2=current_track,
+                path=stream_url,
+                icon=station['thumbnail'],
+                thumbnail=station['thumbnail'],
+                fanart=__get_plugin_fanart(),
+            )
+        )
 
 
 def __add_stations(stations, add_custom=False, browse_more=None):
