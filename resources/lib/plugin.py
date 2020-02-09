@@ -216,7 +216,12 @@ def show_genres():
                 value=__encode(genre["systemEnglish"])
             ),
         })
-    return plugin.finish(items)
+    finish_kwargs = {
+        'sort_methods': [
+            ('LABEL', '%X'),
+        ],
+    }
+    return plugin.finish(items, **finish_kwargs)
 
 @plugin.route('/stations/topics')
 def show_topics():
@@ -233,7 +238,12 @@ def show_topics():
                 value=__encode(topic["systemEnglish"])
             ),
         })
-    return plugin.finish(items)
+    finish_kwargs = {
+        'sort_methods': [
+            ('LABEL', '%X'),
+        ],
+    }
+    return plugin.finish(items, **finish_kwargs)
 
 @plugin.route('/stations/countries')
 def show_countries():
@@ -250,7 +260,12 @@ def show_countries():
                 value=__encode(country["systemEnglish"])
             ),
         })
-    return plugin.finish(items)
+    finish_kwargs = {
+        'sort_methods': [
+            ('LABEL', '%X'),
+        ],
+    }
+    return plugin.finish(items, **finish_kwargs)
 
 @plugin.route('/menu/languages')
 def show_languages():
@@ -267,7 +282,12 @@ def show_languages():
                 value=__encode(lang["systemEnglish"])
             ),
         })
-    return plugin.finish(items)
+    finish_kwargs = {
+        'sort_methods': [
+            ('LABEL', '%X'),
+        ],
+    }
+    return plugin.finish(items, **finish_kwargs)
 
 @plugin.route('/menu/cities')
 def show_cities_submenu():
@@ -283,7 +303,12 @@ def show_cities_submenu():
              'show_cities_list',
              option = 'az')}
     )
-    return plugin.finish(items)
+    finish_kwargs = {
+        'sort_methods': [
+            ('LABEL', '%X'),
+        ],
+    }
+    return plugin.finish(items, **finish_kwargs)
 
 @plugin.route('/menu/cities/select/<option>')
 def show_cities_list(option):
@@ -313,7 +338,12 @@ def show_cities_list(option):
                     value = __encode(city["systemEnglish"]),
                 ),
             })
-    return plugin.finish(items)
+    finish_kwargs = {
+        'sort_methods': [
+            ('LABEL', '%X'),
+        ],
+    }
+    return plugin.finish(items, **finish_kwargs)
 
 @plugin.route('/menu/cities/list/<country>')
 def show_cities_by_country(country):
@@ -330,7 +360,12 @@ def show_cities_by_country(country):
                 value = __encode(city["systemEnglish"]),
             )
         })
-    return plugin.finish(items)
+    finish_kwargs = {
+        'sort_methods': [
+            ('LABEL', '%X'),
+        ],
+    }
+    return plugin.finish(items, **finish_kwargs)
 
 
 @plugin.route('/menu/<category>/<value>')
@@ -353,7 +388,12 @@ def show_popular_and_az(category, value):
              value = value,
              page=1)}
     )
-    return plugin.finish(items)
+    finish_kwargs = {
+        'sort_methods': [
+            ('LABEL', '%X'),
+        ],
+    }
+    return plugin.finish(items, **finish_kwargs)
 
 @plugin.route('/stations/city/<city>/<option>/<page>')
 def list_stations_by_city(city, option, page=1):
