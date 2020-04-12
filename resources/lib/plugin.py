@@ -17,7 +17,7 @@
 #    along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 from xbmcswift2 import Plugin, xbmc, listitem
-from resources.lib.api import RadioApi, RadioApiError, PY3
+from resources.lib.api import RadioApi, RadioApiError
 
 STRINGS = {
     'editorials_recommendations': 30100,
@@ -178,7 +178,7 @@ def custom_my_station(station_id):
         heading = _('please_enter') % _(param)
         station[param] = plugin.keyboard(station.get(param, ''), heading) or ''
     station_name = station.get('name', 'custom')
-    station_id = station_name if PY3 else station_name.decode('ascii', 'ignore').encode('ascii')
+    station_id = station_name
     station['id'] = station_id
     station['is_custom'] = '1'
     if station_id:
@@ -207,13 +207,13 @@ def show_genres():
     items = []
     for genre in genres:
         items.append({
-            'label': __encode(genre["systemEnglish"]),
+            'label': genre["systemEnglish"],
             'icon': plugin.icon,
             'fanart': __get_plugin_fanart(),
             'path': plugin.url_for(
                 'show_popular_and_az',
                 category='genres',
-                value=__encode(genre["systemEnglish"])
+                value=genre["systemEnglish"]
             ),
         })
     finish_kwargs = {
@@ -229,13 +229,13 @@ def show_topics():
     items = []
     for topic in topics:
         items.append({
-            'label': __encode(topic["systemEnglish"]),
+            'label': topic["systemEnglish"],
             'icon': plugin.icon,
             'fanart': __get_plugin_fanart(),
             'path': plugin.url_for(
                 'show_popular_and_az',
                 category='topics',
-                value=__encode(topic["systemEnglish"])
+                value=topic["systemEnglish"]
             ),
         })
     finish_kwargs = {
@@ -251,13 +251,13 @@ def show_countries():
     items = []
     for country in countries:
         items.append({
-            'label': __encode(country["systemEnglish"]),
+            'label': country["systemEnglish"],
             'icon': plugin.icon,
             'fanart': __get_plugin_fanart(),
             'path': plugin.url_for(
                 'show_popular_and_az',
                 category='countries',
-                value=__encode(country["systemEnglish"])
+                value=country["systemEnglish"]
             ),
         })
     finish_kwargs = {
@@ -273,13 +273,13 @@ def show_languages():
     items = []
     for lang in languages:
         items.append({
-            'label': __encode(lang["systemEnglish"]),
+            'label': lang["systemEnglish"],
             'icon': plugin.icon,
             'fanart': __get_plugin_fanart(),
             'path': plugin.url_for(
                 'show_popular_and_az',
                 category='languages',
-                value=__encode(lang["systemEnglish"])
+                value=lang["systemEnglish"]
             ),
         })
     finish_kwargs = {
@@ -317,25 +317,25 @@ def show_cities_list(option):
         countries = radio_api.get_countries()
         for country in countries:
             items.append({
-                'label': __encode(country["systemEnglish"]),
+                'label': country["systemEnglish"],
                 'icon': plugin.icon,
                 'fanart': __get_plugin_fanart(),
                 'path': plugin.url_for(
                     'show_cities_by_country',
-                    country = __encode(country["systemEnglish"]),
+                    country = country["systemEnglish"],
                 ),
             })
     else:
         cities = radio_api.get_cities()
         for city in cities:
             items.append({
-                'label': __encode(city["systemEnglish"]),
+                'label': city["systemEnglish"],
                 'icon': plugin.icon,
                 'fanart': __get_plugin_fanart(),
                 'path': plugin.url_for(
                     'show_popular_and_az',
                     category = 'cities',
-                    value = __encode(city["systemEnglish"]),
+                    value = city["systemEnglish"],
                 ),
             })
     finish_kwargs = {
@@ -351,13 +351,13 @@ def show_cities_by_country(country):
     cities = radio_api.get_cities(country=country)
     for city in cities:
         items.append({
-            'label': __encode(city["systemEnglish"]),
+            'label': city["systemEnglish"],
             'icon': plugin.icon,
             'fanart': __get_plugin_fanart(),
             'path': plugin.url_for(
                 'show_popular_and_az',
                 category = 'cities',
-                value = __encode(city["systemEnglish"]),
+                value = city["systemEnglish"],
             )
         })
     finish_kwargs = {
@@ -593,10 +593,6 @@ def __log(text):
 def __get_plugin_fanart():
     return plugin.fanart if not plugin.get_setting('hide-fanart', bool) else ''
 
-def __encode(string):
-    if PY3:
-        return string
-    return string.encode('utf-8')
 
 def _(string_id):
     if string_id in STRINGS:

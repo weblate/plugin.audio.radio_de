@@ -21,15 +21,8 @@ import sys
 import random
 import xbmc
 
-# avoid using named attributes since they were introduced with python 2.7 only
-PY3 = sys.version_info[0] >= 3
-
-if PY3:
-    from urllib.parse import urlencode
-    from urllib.request import urlopen, Request, HTTPError, URLError
-else:
-    from urllib import urlencode
-    from urllib2 import urlopen, Request, HTTPError, URLError
+from urllib.parse import urlencode
+from urllib.request import urlopen, Request, HTTPError, URLError
 
 
 class RadioApiError(Exception):
@@ -369,9 +362,7 @@ class RadioApi():
 
     @staticmethod
     def __versioned_string(string):
-        if PY3:
-            return bytearray(string, 'utf-8')
-        return string
+        return bytearray(string, 'utf-8')
 
     @staticmethod
     def log(text):
