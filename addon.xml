@@ -12,10 +12,12 @@
         <source>https://github.com/XBMC-Addons/plugin.audio.radio_de</source>
         <forum>https://forum.kodi.tv/showthread.php?tid=119362</forum>
         <license>GPL-2.0-only</license>
-        <news>v2.4.2 (9/2/2020)
-            [add] sort methods for categories
-            [add] setting to prefer http connections over https if http streams are available
-            [fix] use sys.version_info[0] for compatibility with python2.6
+        <news>v3.0.0+matrix.1 (12/4/2020)
+            [new] Automated submissions to matrix
+            [new] Python3 only version
+            [new] New language layout and other matrix fixes
+            [fix] Playlist based stations
+            [fix] Ratings
         </news>
         <summary lang="be_BY">Access &gt;7000 radio broadcasts</summary>
         <summary lang="ca_ES">accedeix a mes de 7000 emissores de radio</summary>
