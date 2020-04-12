@@ -126,7 +126,6 @@ class RadioApi():
             return None
 
         if resolve_playlists and self.__check_paylist(station['streamUrl']):
-            playlist_url = station['streamUrl']
             station['streamUrl'] = self.__resolve_playlist(station)
         stations = (station, )
         return self.__format_stations_v2(stations)[0]
