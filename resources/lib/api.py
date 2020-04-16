@@ -36,6 +36,7 @@ class RadioApi():
         'german': 'http://api.radio.de/info',
         'french': 'http://api.radio.fr/info',
         'portuguese': 'http://api.radio.pt/info',
+        'spanish': 'http//api.radio.es/info',
     }
 
     USER_AGENT = 'XBMC Addon Radio'
