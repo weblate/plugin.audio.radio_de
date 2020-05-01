@@ -86,11 +86,11 @@ msgstr "Forzar el modo vista en miniatura"
 
 msgctxt "#30400"
 msgid "Add to 'My Stations'"
-msgstr "Añadir a "Mis emisoras""
+msgstr "Añadir a 'Mis emisoras'"
 
 msgctxt "#30401"
 msgid "Remove from 'My Stations'"
-msgstr "Eliminar de "Mis emisoras""
+msgstr "Eliminar de 'Mis emisoras'"
 
 msgctxt "#30402"
 msgid "Edit custom Station"
