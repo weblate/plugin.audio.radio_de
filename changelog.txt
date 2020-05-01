@@ -1,3 +1,6 @@
+v3.0.2+matrix.1 (1/5/2020)
+    - [fix] Custom stations if the url is not a playlist
+
 v3.0.1+matrix.1 (13/4/2020)
     - [new] Use internal playlist resolver also in custom stations
 
