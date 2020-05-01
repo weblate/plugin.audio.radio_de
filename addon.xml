@@ -70,6 +70,10 @@
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
+            <screenshot>resources/art/screenshot-1.png</screenshot>
+            <screenshot>resources/art/screenshot-2.png</screenshot>
+            <screenshot>resources/art/screenshot-3.png</screenshot>
+            <screenshot>resources/art/screenshot-4.png</screenshot>
         </assets>
     </extension>
 </addon>
