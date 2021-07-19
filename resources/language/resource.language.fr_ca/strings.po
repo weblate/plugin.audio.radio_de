@@ -17,6 +17,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.6.1\n"
 
+msgctxt "Addon Summary"
+msgid "Access &gt;30000 radio broadcasts"
+msgstr "Accéder à &gt; 30000 radiodiffusions"
+
+msgctxt "Addon Description"
+msgid "Music plugin to access over 30000 international radio broadcasts from rad.io, radio.de, radio.fr, radio.pt and radio.es[CR]Currently features[CR]- English, german, french translated[CR]- Browse stations by location, genre, topic, country, city and language[CR]- Search for stations[CR]- 115 genres, 59 topics, 94 countrys, 1010 citys, 63 languages"
+msgstr "Plugiciel de musique pour accéder à plus de 30000 radiodiffusions internationales de rad.io, radio.de et radio.fr[CR]Offre présentement [CR]- Traductions en anglais, allemand et français[CR]- Parcourir des stations par lieux, genres, sujets, pays, villes et langues[CR]- Rechercher des stations[CR]- 115 genres, 59 sujets, 94 pays, 1 010 villes, 63 langues."
+
 msgctxt "#30100"
 msgid "Editorials Recommendations"
 msgstr "Recommandations des éditoriaux"
