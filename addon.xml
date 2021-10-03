@@ -16,8 +16,8 @@
             [new] Also set the station name property on the final resolved item
         </news>
         <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
+            <icon>resources/art/icon.png</icon>
+            <fanart>resources/art/fanart.jpg</fanart>
             <screenshot>resources/art/screenshot-1.png</screenshot>
             <screenshot>resources/art/screenshot-2.png</screenshot>
             <screenshot>resources/art/screenshot-3.png</screenshot>
