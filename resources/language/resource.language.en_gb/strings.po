@@ -163,3 +163,7 @@ msgstr ""
 msgctxt "#30609"
 msgid "Sucessfully added to my stations!"
 msgstr ""
+
+msgctxt "#30610"
+msgid "Sucessfully removed from my stations!"
+msgstr ""

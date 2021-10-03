@@ -35,7 +35,8 @@ STRINGS = {
     'next_page': 30605,
     'by_country': 30606,
     'error_stream': 30608,
-    'station_add_success': 30609
+    'station_add_success': 30609,
+    'station_rm_success': 30610
 }
 
 SORT_TYPES = {
@@ -211,6 +212,7 @@ def add_to_my_stations(station_id):
         my_stations[station_id] = station
         my_stations.sync()
         plugin.notify("Radio", _('station_add_success'), image=plugin.icon)
+        plugin.refresh_container()
     else:
         plugin.notify("Radio", _('error_stream'), image=plugin.icon)
 
@@ -220,6 +222,8 @@ def del_from_my_stations(station_id):
     if station_id in my_stations:
         del my_stations[station_id]
         my_stations.sync()
+        plugin.notify("Radio", _('station_rm_success'), image=plugin.icon)
+        plugin.refresh_container()
 
 
 @plugin.route('/stations/genres')
@@ -543,7 +547,7 @@ def get_stream_url(station_id):
 
 def __add_stations(stations, add_custom=False, browse_more=None):
     items = []
-    my_station_ids = my_stations.keys()
+    my_station_ids = [int(item) for item in my_stations if item.isdigit()]
     for i, station in enumerate(stations):
         if station:
             station_id = station.get('id')
@@ -589,20 +593,20 @@ def __add_stations(stations, add_custom=False, browse_more=None):
                 },
                 'offscreen': True
             })
-        if add_custom:
-            items.append({
-                'label': _('add_custom'),
-                'path': plugin.url_for('custom_my_station', station_id='new'),
-            })
+    if add_custom:
+        items.append({
+            'label': _('add_custom'),
+            'path': plugin.url_for('custom_my_station', station_id='new'),
+        })
 
-        if browse_more:
-            items.append({
-                'label': '[B]%s[/B]' % _('next_page') % (browse_more['page'], browse_more['total_pages']),
-                'path': browse_more['url'],
-                'icon': browse_more['icon'],
-                'fanart': browse_more['fanart'],
-                'offscreen': True
-            })
+    if browse_more:
+        items.append({
+            'label': '[B]%s[/B]' % _('next_page') % (browse_more['page'], browse_more['total_pages']),
+            'path': browse_more['url'],
+            'icon': browse_more['icon'],
+            'fanart': browse_more['fanart'],
+            'offscreen': True
+        })
 
 
     finish_kwargs = {

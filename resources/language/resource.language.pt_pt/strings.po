@@ -164,3 +164,7 @@ msgstr "Incapaz de determinar o endereço da stream de rádio"
 msgctxt "#30609"
 msgid "Sucessfully added to my stations!"
 msgstr "Adicionado com sucesso à lista de estações!"
+
+msgctxt "#30610"
+msgid "Sucessfully removed from my stations!"
+msgstr "Removido com sucesso da lista de estações!"
