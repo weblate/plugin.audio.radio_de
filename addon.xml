@@ -41,7 +41,7 @@
         <summary lang="hu_HU">Hozzáférés 30000-nél is több rádióadáshoz</summary>
         <summary lang="id_ID">Akses &gt;30000 siaran radio</summary>
         <summary lang="it_IT">Accedi a più di 30000 trasmissioni radio</summary>
-        <summary lang="ko_KR">&gt;30000 라디오 방송국 연결</summary>
+        <summary lang="ko_KR">&gt;3만개의 라디오 방송국 연결</summary>
         <summary lang="lt_LT">Prieiga&gt; 30000 radijo transliacijų</summary>
         <summary lang="nl_NL">Toegang tot &gt;30000 radio uitzendingen</summary>
         <summary lang="pl_PL">Dostęp do ponad 30000 stacji radiowych</summary>
@@ -69,7 +69,7 @@
         <description lang="hu_HU">Beépülő modul több, mint 30000 nemzetközi rádióadás eléréséhez a rad.io, radio.de és radio.fr oldalakról[CR]Jelenlegi tulajdonságok[CR]- Angol, német, francia és magyar nyelv[CR]- Állomások böngészése hely, műfaj, téma, ország, város és nyelv szerint[CR]- Állomások keresése[CR]- 115 műfaj, 59 téma, 94 ország, 1010 város, 63 nyelv</description>
         <description lang="id_ID">Plugin musik untuk mengakses lebih dari 30000 siaran radio internasional dari rad.io, radio.de dan radio.fr[CR]Fitur saat ini[CR]- Terjemahan Inggris, Jerman dan Perancis[CR]- Jelajah stasiun berdasarkan lokasi, tema, topik, negara, kota dan bahasa[CR]- Cari stasiun[CR]- 115 tema, 59 topik, 94 negara, 1010 kota, 63 bahasa</description>
         <description lang="it_IT">Plugin per accedere a oltre 30000 trasmissioni internazionali radiofoniche da rad.io, radio.de e radio.fr[CR]Caratteristiche[CR]- Supporta inglese, tedesco e francese[CR]- Sfoglia le stazioni per località, genere, argomento, paese, citta e lingua[CR]- Ricerca delle stazioni[CR]- 115 generi, 59 argomenti, 94 paesi, 1010 città e 63 lingue</description>
-        <description lang="ko_KR">rad.io, radio.de, radio.fr, radio.pt 및 radio.es에서 30000개 이상의 국제 라디오 방송에 액세스할 수 있는 음악 플러그인[CR]현재 기능[CR]- 영어, 독일어, 프랑스어 번역[CR]- 방송국 검색 위치, 장르, 주제, 국가, 도시 및 언어별[CR]- 방송국 검색[CR]- 115개 장르, 59개 주제, 94개 국가, 1010개 도시, 63개 언어</description>
+        <description lang="ko_KR">rad.io, radio.de, radio.fr, radio.pt 및 radio.es에서 3만개 이상의 국제 라디오 방송에 액세스할 수 있는 음악 플러그인[CR]현재 기능[CR]- 영어, 독일어, 프랑스어 번역[CR]- 방송국 검색 위치, 장르, 주제, 국가, 도시 및 언어별[CR]- 방송국 검색[CR]- 115개 장르, 59개 주제, 94개 국가, 1010개 도시, 63개 언어</description>
         <description lang="lt_LT">Muzikos įskiepio prieiga prie daugiau nei 30000 tarptautinių radijo transliacijų iš rad.io, radio.de ir radio.fr [CR] Šiuo metu programoja išversta į [Cr] - anglų, vokiečių ir prancūzų kalbas [CR] - Naršyti stotis pagal: vietovę, žanrą, temą, šalį, miestą ir/ar kalbą [CR] - Ieškoti radio stočių pagal:[Cr] - 115 žanrai, 59 temos, 94 šalys, 1010 miestų, 63 kalbos</description>
         <description lang="nl_NL">muziek plug-in om toegang te krijgen tot over 30000 internationale radiouitzendingen van rad.io, radio.de en radio.fr[CR]Huidige functies[CR]- engels, duits en frans vertaalt[CR]- Zoek naar stations vanuit locatie, genre, onderwerp, land, plaats en taal[CR]- zoek voor stations[CR]- 115 genres. 59 onderwerpen, 94 landen. 1010 plaatsen, 63 talen</description>
         <description lang="pl_PL">Wtyczka muzyczna dająca dostęp do ponad 30000 międzynarodowych stacji radiowych z[CR]rad.io, radio.de, daio.fr[CR]Obecnie w językach[CR]- Angielski, Niemiecki i Francuski[CR]- Szukaj stacji według lokacji, gatunku, tematu, kraju, miasta czy języka[CR]- 115 gatunków, 59 tematów, 94 kraje, 1010 miasta, 63 języki</description>
